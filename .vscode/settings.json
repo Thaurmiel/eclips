@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a1572268-48f2-4ef3-b618-537e3a5a5947/microsoft.web/sites/subscriptions/a1572268-48f2-4ef3-b618-537e3a5a5947/resourceGroups/eclips-game_group/providers/Microsoft.Web/sites/eclips-game",
+    "appService.deploySubpath": "."
+}

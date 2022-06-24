@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eclips</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/export-from-json/dist/umd/index.min.js"></script>
+</head>
+<body>
+  <ul class="pages">
+    
+    <li class="lobby page" style="display: none;">
+      <div class="setup" id="room">
+        <p>Use this ID to connect to game: <strong><span id="room-id"></span></strong></p>
+        <div class="panel panel-default" id="grouppanel">
+          <div class="panel-heading">Groups</div>
+    
+    
+          <table class="table" id="grouptable">
+            <thead>
+              <tr>
+                <th>Slot 1</th>
+                <th>Slot 2</th>
+                <th>Slot 3</th>
+              </tr>
+              <button id="start_game" disabled="disabled">Start game</button>
+            </thead>
+    
+            <tbody id="roomHolder">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </li>
+    
+
+    <li class = "setup page">
+      <div id="room-selector">
+        <p>Hi, <strong><span id="userName">User</span></strong>!</p>
+        <p>Now is <span id="active-room-amount">0</span> of <span id="max-room-amount">0</span> rooms avaiable</p>
+        <button id="create-room">Create new room</button>
+        <h1>OR</h1>
+        <button id="get-in-room">Go to existing room</button>
+      </div>
+    </li>
+    <li class="inRoom page" style="display: none;">
+      <form>
+        <p>Type existing room id</p>
+        <input type="text" pattern="[0-9]{7}" id="formRoomId" placeholder="7-digit code" required>
+        <button id="btnInRoom">Go!</button>
+        <button id="alt-create-room">Create new room instead?</button>
+        
+      </form>
+    </li>
+    <li class="game page" style="display: none;">
+      <div id="in_game" class="setup">
+
+        <section>
+          <br>
+          <p>Current turn: <span id="currentTurn">1</span></p>
+          <div class="inRow">
+            <div class=" chain np">
+            <p>Factory</p>
+            <img src="img/RAW.png" alt="" >
+            <div id="" class="circle"></div>
+            <p>Requested package:</p>
+              <span id="requested-rupnica"></span>
+            </div>
+            <div class="chain" id="1">
+              <p>Factory storage</p>
+              <img src="img/storage.png" alt="" >
+              <div id="rupnica-storage" class="circle">10</div>
+              <p>Requested package:</p>
+              <span id="requested-rupnicas-storage"></span>
+            </div>
+            <div class="chain" id="2">
+              <p>Wholesaler warehouse</p>
+              <img src="img/storage.png" alt="" >
+              <div id="vairum-storage" class="circle">111</div>
+              <p>Requested package:</p>
+              <span id="requested-vairum-storage"></span>
+            </div>
+            <div class="chain" id="3">
+              <p>Retail Warehouse</p>
+              <img src="img/store.png" alt="" >
+              <div id="mazum-storage" class="circle">10</div>
+            </div>
+            <div class=" chain np">
+              <p>Consumer</p>
+              <img src="img/consumer.png" alt="" >
+              <div  class="circle"></div>
+              <p>Demand:</p>
+              <span id="consumer-demand">10</span>
+            </div>
+          </div>
+          
+        </section>
+        <section id="user-interface" class="setup">
+          <div>
+            <input type="number" id="package-amount" pattern="[0-9.]{.3}" min="0">
+            <button id="submit-package" disabled>Request package and end turn</button>
+            
+          </div>
+        </section>
+
+    </li>
+
+
+    
+
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <h5>Use 3+ characters</h5>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+
+    <li class="chart" style="display: none;">
+      <canvas id="tempStats"></canvas>
+    </li>
+
+    <li class="results" style="display: none; text-align: center;">
+      <canvas id="gameStats"></canvas>
+      <br><p>Average consumer satisfaction is <span id="avg-satisfaction"></span></p>
+      <button onclick="window.location.reload();">Back to start</button>
+    </li>
+    
+
+
+  </ul>
+
+
+</div>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

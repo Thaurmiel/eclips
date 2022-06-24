@@ -1,0 +1,303 @@
+/* Fix user-agent */
+
+* {
+  box-sizing: border-box;
+  
+  
+}
+
+canvas{
+  margin: 25px ;
+}
+
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, input {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  text-align: center;
+  height: 50vh;
+  min-height:425px;
+  position: relative;
+  width: 100%;
+  right: 0%;
+  bottom: 0%;
+  background-color: antiquewhite;
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+  height: 100%;
+}
+
+.login.page .form {
+  
+  margin-top: -100px;
+  position: absolute;
+
+  
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+.lobby.page{
+  height: 50vh;
+}
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+  border: 1px solid black;
+  position: relative;
+  width: 100%;
+  
+}
+
+.setup{
+  
+  
+  text-align: center;
+  text-decoration: none;
+  
+  min-height: fit-content;
+  height: max-content;
+}
+
+.setup.page{
+  min-height: fit-content;
+  height: 50vh;
+  display: none;
+  
+    
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid black;
+
+  
+}
+
+.game.page{
+display: inline-block; 
+width: 100% ;
+min-height:425px;
+height:50vh;
+}
+
+.chart.page{
+  width:100vw
+}
+
+/* Font */
+.circle {
+  box-sizing: border-box;
+  align-self: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border-color: black;
+  
+  border-style: solid;
+  transform: scale(1);
+  animation: animateLogo 10s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+}
+
+
+.inRow {
+  width: 100%;
+  text-align: center; 
+}
+.circle.active{
+  border-color: rgb(45, 155, 82);
+  border-width: 0.4em; 
+  width: 3em;
+  height: 3em;
+}
+
+.chain{
+  vertical-align: top;
+  min-width: 100px;
+  min-height: 300px;
+  height: 100%;
+  width: 15%;
+  display: inline-block; 
+  background-color: rgb(201, 228, 219);
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid black;
+  margin: 15px auto;
+  justify-content: center;
+}
+.chain.np{
+
+  background-color: rgb(212, 240, 205);
+
+}
+.np .circle{
+
+  background-color: rgb(165, 165, 165);
+  color: rgb(165, 165, 165);
+
+}
+.chain p{
+  margin: 15px auto;
+}
+img {
+  width: 75px;
+  height: 75px;
+  margin: 15px;
+}
+button {
+  border: 1px solid #0066cc;
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 6px 12px;
+  margin: 12px auto;
+  text-align: center;
+}
+
+button:hover {
+  border: 1px solid #0099cc;
+  background-color: #00aacc;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+td
+{
+    padding:2px;
+}
+th
+{
+    padding: 0 2px 5px;
+    line-height: 15px;
+    text-align: center;
+    
+}
+
+.messages {
+  font-size: 150%;
+}
+
+.inputMessage {
+  font-size: 100%;
+}
+
+.log {
+  color: gray;
+  font-size: 70%;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 10px solid #000;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+#room-selector{
+  vertical-align: middle;
+}
+
+
